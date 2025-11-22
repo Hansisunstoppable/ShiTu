@@ -172,7 +172,6 @@ func (p *Processor) Process(ctx context.Context, task tasks.FileProcessingTask) 
 }
 
 // splitText 将长文本按指定大小和重叠进行切分。
-// (与Java的CharacterTextSplitter逻辑保持一致)
 func (p *Processor) splitText(text string, chunkSize int, chunkOverlap int) []string {
 	if chunkSize <= chunkOverlap {
 		// Fallback to simple split if overlap is invalid

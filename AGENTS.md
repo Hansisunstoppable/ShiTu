@@ -94,7 +94,7 @@ docker compose -f deployments/docker-compose.yaml down
 - Elasticsearch (port 9200)
 - Kafka (port 9092)
 - Zookeeper (port 2181)
-- Apache Tika (port 9528)
+- Apache Tika (port 9998)
 
 ## Architecture
 

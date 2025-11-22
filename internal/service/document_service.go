@@ -163,7 +163,8 @@ func (s *documentService) GetFilePreviewContent(fileName string, user *model.Use
 	}
 
 	// 从 MinIO 获取文件对象
-	objectName := fmt.Sprintf("uploads/%d/%s", targetFile.UserID, targetFile.FileName)
+	//objectName := fmt.Sprintf("uploads/%d/%s", targetFile.UserID, targetFile.FileName)
+	objectName := fmt.Sprintf("merged/%s", targetFile.FileName)
 	object, err := storage.MinioClient.GetObject(context.Background(), s.minioCfg.BucketName, objectName, minio.GetObjectOptions{})
 	if err != nil {
 		return nil, err

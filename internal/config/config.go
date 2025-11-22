@@ -142,7 +142,7 @@ type AIPromptConfig struct {
 	NoResultText string `mapstructure:"no-result-text"`
 }
 
-// Init 初始化配置加载，从指定的路径读取 YAML 文件并解析到 Conf 变量中。
+// Init 初始化配置加载，从指定的路径读取 YAML 文件并解析到 Co nf 变量中。
 func Init(configPath string) {
 	viper.SetConfigFile(configPath)
 	viper.SetConfigType("yaml")

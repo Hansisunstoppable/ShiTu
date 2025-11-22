@@ -33,7 +33,7 @@ minio:
   bucket_name: "uploads"
 
 tika:
-  server_url: "http://127.0.0.1:9528"
+  server_url: "http://127.0.0.1:9998"
 
 elasticsearch:
   addresses: "http://127.0.0.1:9200"

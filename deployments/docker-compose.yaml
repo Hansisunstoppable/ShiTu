@@ -67,7 +67,7 @@ services:
     image: apache/tika:latest-full
     container_name: tika-server
     ports:
-      - "9528:9528"
+      - "9998:9998"
     restart: unless-stopped
 
   zookeeper:
@@ -106,13 +106,23 @@ services:
       kafka-topics --create --if-not-exists --topic vectorization --bootstrap-server kafka:29092 || true;
       "
     restart: "no"
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: PaiSmart
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+    depends_on:
+      - kafka
 
   es:
     image: elasticsearch:8.10.4
     container_name: es
     restart: always
     ports:
-      - "9199:9199"
+      - "9200:9200"
     environment:
       - node.name=pai-smart-es01
       - discovery.type=single-node
@@ -139,7 +149,7 @@ services:
       /usr/local/bin/docker-entrypoint.sh
       "
     healthcheck:
-      test: ["CMD", "curl", "-s", "http://localhost:9199/_cluster/health?pretty"]
+      test: ["CMD", "curl", "-s", "http://localhost:9200/_cluster/health?pretty"]
       interval: 30s
       timeout: 10s
       retries: 3

@@ -25,9 +25,10 @@ var producer *kafka.Writer
 // InitProducer 初始化 Kafka 生产者。
 func InitProducer(cfg config.KafkaConfig) {
 	producer = &kafka.Writer{
-		Addr:     kafka.TCP(cfg.Brokers),
-		Topic:    cfg.Topic,
-		Balancer: &kafka.LeastBytes{},
+		Addr:         kafka.TCP(cfg.Brokers),
+		Topic:        cfg.Topic,
+		Balancer:     &kafka.LeastBytes{},
+		RequiredAcks: kafka.RequireAll, // 确保所有副本都被写入，acks=all
 	}
 	log.Info("Kafka 生产者初始化成功")
 }

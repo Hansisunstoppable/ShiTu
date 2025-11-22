@@ -40,7 +40,7 @@ func NewSearchService(embeddingClient embedding.Client, esClient *elasticsearch.
 	}
 }
 
-// HybridSearch 执行与 Java 项目逻辑一致的两阶段混合搜索。
+// HybridSearch 执行两阶段混合搜索。
 func (s *searchService) HybridSearch(ctx context.Context, query string, topK int, user *model.User) ([]model.SearchResponseDTO, error) {
 	log.Infof("[SearchService] 开始执行混合搜索, query: '%s', topK: %d, user: %s", query, topK, user.Username)
 
