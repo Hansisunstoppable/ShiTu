@@ -3,6 +3,8 @@ package repository
 
 import (
 	"context"
+	"errors"
+	"fmt"
 	"github.com/go-redis/redis/v8"
 	"gorm.io/gorm"
 	"pai-smart-go/internal/model"
@@ -105,9 +107,23 @@ func (r *uploadRepository) FindAccessibleFiles(userID uint, orgTags []string) ([
 	return files, err
 }
 
-// DeleteFileUploadRecord 删除一个文件上传记录。
+// DeleteFileUploadRecord 删除一个文件上传记录, 包括 chunk 与 vector 的记录。
 func (r *uploadRepository) DeleteFileUploadRecord(fileMD5 string, userID uint) error {
-	return r.db.Where("file_md5 = ? AND user_id = ?", fileMD5, userID).Delete(&model.FileUpload{}).Error
+	var errs []error
+
+	if err := r.db.Where("file_md5 = ?", fileMD5).Delete(&model.ChunkInfo{}).Error; err != nil {
+		errs = append(errs, err)
+	}
+	if err := r.db.Where("file_md5 = ?", fileMD5).Delete(&model.DocumentVector{}).Error; err != nil {
+		errs = append(errs, err)
+	}
+	if err := r.db.Where("file_md5 = ? AND user_id = ?", fileMD5, userID).Delete(&model.FileUpload{}).Error; err != nil {
+		errs = append(errs, err)
+	}
+	if len(errs) > 0 {
+		return fmt.Errorf("删除文件记录部分失败（fileMD5=%s, userID=%d）: %v", fileMD5, userID, errors.Join(errs...))
+	}
+	return nil
 }
 
 // UpdateFileUploadRecord 更新一个文件上传记录。
