@@ -2,7 +2,6 @@
 package pipeline
 
 import (
-	"bytes" // 引入 bytes 包
 	"context"
 	"errors"
 	"fmt"
@@ -67,21 +66,33 @@ func (p *Processor) Process(ctx context.Context, task tasks.FileProcessingTask) 
 	defer object.Close()
 
 	// 增加调试步骤：将文件内容读入内存缓冲区以检查大小
-	buf := new(bytes.Buffer)
-	size, err := buf.ReadFrom(object)
-	if err != nil {
-		log.Errorf("[Processor] 从MinIO对象流中读取内容到缓冲区失败, Error: %v", err)
-		return fmt.Errorf("读取MinIO对象流失败: %w", err)
-	}
-	log.Infof("[Processor] 步骤1: 文件下载成功, 从MinIO流中读取到的文件大小为: %d字节", size)
-	if size == 0 {
-		log.Warnf("[Processor] 文件 '%s' 内容为空, 处理中止", task.FileName)
-		return errors.New("文件内容为空")
-	}
+	//buf := new(bytes.Buffer)
+	//size, err := buf.ReadFrom(object)
+	//if err != nil {
+	//	log.Errorf("[Processor] 从MinIO对象流中读取内容到缓冲区失败, Error: %v", err)
+	//	return fmt.Errorf("读取MinIO对象流失败: %w", err)
+	//}
+	//log.Infof("[Processor] 步骤1: 文件下载成功, 从MinIO流中读取到的文件大小为: %d字节", size)
+	//if size == 0 {
+	//	log.Warnf("[Processor] 文件 '%s' 内容为空, 处理中止", task.FileName)
+	//	return errors.New("文件内容为空")
+	//}
 
 	// 2. 使用 Tika 提取文本 (使用缓冲区中的数据)
 	log.Info("[Processor] 步骤2: 使用Tika提取文本内容")
-	textContent, err := p.tikaClient.ExtractText(bytes.NewReader(buf.Bytes()), task.FileName)
+	objInfo, err := object.Stat()
+	if err != nil {
+		log.Errorf("[Processor] 获取对象信息失败: %v", err)
+		return fmt.Errorf("stat minio object failed: %w", err)
+	}
+	if objInfo.Size == 0 {
+		log.Warnf("[Processor] 文件 '%s' 为空, 处理中止", task.FileName)
+		return errors.New("文件内容为空")
+	}
+	log.Infof("[Processor] 步骤1: 获取文件流成功, 大小: %d 字节", objInfo.Size)
+	textContent, err := p.tikaClient.ExtractText(object, task.FileName)
+
+	//textContent, err := p.tikaClient.ExtractText(bytes.NewReader(buf.Bytes()), task.FileName)
 	if err != nil {
 		log.Errorf("[Processor] 使用Tika提取文本失败, FileName: %s, Error: %v", task.FileName, err)
 		return fmt.Errorf("使用 Tika 提取文本失败: %w", err)
