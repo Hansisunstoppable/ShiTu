@@ -1,10 +1,3 @@
-/.qoder
-/.idea
-frontend/packages/scripts/bin.ts
-frontend/packages/scripts/bin.ts
-/logs
-/vendor
-
 *
 !/configs/
 !/configs/**
@@ -20,3 +13,10 @@ frontend/packages/scripts/bin.ts
 !/README.md
 !/go.mod
 !/go.sum
+
+/.qoder
+/.idea
+frontend/packages/scripts/bin.ts
+frontend/packages/scripts/bin.ts
+/logs
+/vendor
