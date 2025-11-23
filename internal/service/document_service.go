@@ -103,7 +103,7 @@ func (s *documentService) DeleteDocument(fileMD5 string, user *model.User) error
 		// Log or ignore error, but proceed to delete DB record
 	}
 
-	// 从数据库删除记录
+	// 从数据库删除记录()
 	return s.uploadRepo.DeleteFileUploadRecord(fileMD5, record.UserID)
 }
 
