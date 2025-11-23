@@ -1,0 +1,51 @@
+2025-11-20 06:55:39.624  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : Starting KafkaConsoleUiApplication v1.0.10 using Java 1.8.0_212 on c851ae3a0fce with PID 1 (/app/lib/kafka-console-ui.jar started by root in /app)
+2025-11-20 06:55:39.629  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : No active profile set, falling back to default profiles: default
+2025-11-20 06:55:42.225  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7766 (http)
+2025-11-20 06:55:42.257  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-20 06:55:42.258  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2025-11-20 06:55:42.343  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-20 06:55:42.343  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2548 ms
+2025-11-20 06:55:42.491  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-20 06:55:42.826  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-20 06:55:42.884  INFO 1 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:/app/data/data/db/kafka-console'
+2025-11-20 06:55:44.383  INFO 1 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2025-11-20 06:55:44.599  INFO 1 --- [main] com.xuxd.kafka.console.boot.Bootstrap    : load default kafka config.
+2025-11-20 06:55:44.700  INFO 1 --- [main] c.xuxd.kafka.console.dao.init.DataInit   : Disable login authentication, no longer try to initialize the data
+2025-11-20 06:55:44.735  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7766 (http) with context path ''
+2025-11-20 06:55:44.761  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : Started KafkaConsoleUiApplication in 6.256 seconds (JVM running for 7.461)
+2025-11-20 06:56:37.606  INFO 1 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-20 06:56:37.616  INFO 1 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-20 06:56:52.965  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : Starting KafkaConsoleUiApplication v1.0.10 using Java 1.8.0_212 on c851ae3a0fce with PID 1 (/app/lib/kafka-console-ui.jar started by root in /app)
+2025-11-20 06:56:52.970  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : No active profile set, falling back to default profiles: default
+2025-11-20 06:56:55.548  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7766 (http)
+2025-11-20 06:56:55.574  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-20 06:56:55.575  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2025-11-20 06:56:55.674  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-20 06:56:55.674  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2594 ms
+2025-11-20 06:56:55.895  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-20 06:56:56.559  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-20 06:56:56.640  INFO 1 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:/app/data/data/db/kafka-console'
+2025-11-20 06:56:59.833  INFO 1 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2025-11-20 06:57:00.198  INFO 1 --- [main] com.xuxd.kafka.console.boot.Bootstrap    : load default kafka config.
+2025-11-20 06:57:00.335  INFO 1 --- [main] c.xuxd.kafka.console.dao.init.DataInit   : Disable login authentication, no longer try to initialize the data
+2025-11-20 06:57:00.368  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7766 (http) with context path ''
+2025-11-20 06:57:00.386  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : Started KafkaConsoleUiApplication in 9.085 seconds (JVM running for 10.498)
+2025-11-20 06:57:31.829  INFO 1 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-20 06:57:31.841  INFO 1 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-20 06:57:35.274  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : Starting KafkaConsoleUiApplication v1.0.10 using Java 1.8.0_212 on 12842b8f5ef6 with PID 1 (/app/lib/kafka-console-ui.jar started by root in /app)
+2025-11-20 06:57:35.278  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : No active profile set, falling back to default profiles: default
+2025-11-20 06:57:36.814  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7766 (http)
+2025-11-20 06:57:36.827  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-20 06:57:36.828  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2025-11-20 06:57:36.880  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-20 06:57:36.880  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1532 ms
+2025-11-20 06:57:37.003  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-20 06:57:37.371  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-20 06:57:37.409  INFO 1 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:/app/data/data/db/kafka-console'
+2025-11-20 06:57:39.338  INFO 1 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2025-11-20 06:57:39.702  INFO 1 --- [main] com.xuxd.kafka.console.boot.Bootstrap    : load default kafka config.
+2025-11-20 06:57:39.845  INFO 1 --- [main] c.xuxd.kafka.console.dao.init.DataInit   : Disable login authentication, no longer try to initialize the data
+2025-11-20 06:57:39.876  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7766 (http) with context path ''
+2025-11-20 06:57:39.895  INFO 1 --- [main] c.x.k.console.KafkaConsoleUiApplication  : Started KafkaConsoleUiApplication in 5.33 seconds (JVM running for 6.483)
+2025-11-20 06:58:05.885  INFO 1 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-20 06:58:05.888  INFO 1 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
