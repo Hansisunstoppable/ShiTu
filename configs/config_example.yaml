@@ -44,7 +44,7 @@ elasticsearch:
 # Embedding model config
 embedding:
   model: "text-embedding-v4"
-  api_key: "sk-055bc9c0b8814476afca5a14b77609d4"
+  api_key: ""
   base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
   dimensions: 2048
 
@@ -52,10 +52,10 @@ embedding:
 llm:
   base_url: "https://api.deepseek.com/v1"  # 本地是 http://localhost:11434/v1 官方：https://api.deepseek.com/v1
   model: deepseek-chat  # 本地: deepseek-r1:7b, 官方: deepseek-chat
-  api_key: "sk-040d43d6a8c341578ab0c4fc3f64729d"
+  api_key: ""
   prompt:
     rules: |
-      你是派聪明知识助手，须遵守：
+      你是识途知识助手，须遵守：
       1. 仅用简体中文作答。
       2. 回答需先给结论，再给论据。
       3. 如引用参考信息，请在句末加 (来源#编号: 文件名)。
